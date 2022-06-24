@@ -12,7 +12,7 @@ import 'dart:io';
 
 import 'Models/User.dart';
 
-var x = "http://192.168.93.26:8888";
+var x = "http://192.168.93.26:6500";
 
 class DemoConnection {
   Future<User> fetchoneuser(id) async {
@@ -233,6 +233,8 @@ class DemoConnection {
     } else {
       try {
         String filename = image.path.split('/').last;
+        print(filename);
+        print(image.path);
         FormData formData = FormData.fromMap({
           "nom": nom,
           "prenom": prenom,

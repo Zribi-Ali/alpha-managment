@@ -35,6 +35,7 @@ class _ModifyState extends State<Modify> {
     TextEditingController myControllerprenom = TextEditingController()
       ..text = Provider.of<MyProvider>(context).prenom;
     var image = Provider.of<MyProvider>(context).image;
+
     final prov = Provider.of<MyProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
@@ -211,7 +212,7 @@ class _ModifyState extends State<Modify> {
         });
 
         Response response =
-            await dio.put("http://192.168.1.19:8888/profil/$idu",
+            await dio.put("http://192.168.93.26:6500/profil/$idu",
                 data: formData,
                 options: Options(headers: {
                   "accept": "*/*",
@@ -230,9 +231,10 @@ class _ModifyState extends State<Modify> {
     }
   }
 
+/** */
   Future fetchuser(id) async {
     var response = await http
-        .get(Uri.parse('http://192.168.93.26:8888/admin/user'), headers: {
+        .get(Uri.parse('http://192.168.93.26:6500/admin/user'), headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": 'true',
       "Access-Control-Allow-Headers":

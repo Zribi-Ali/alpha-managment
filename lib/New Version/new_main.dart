@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import '../Routes.dart';
 import '../Screans/Profile/image.dart';
 import 'image.dart';
 
@@ -114,6 +115,7 @@ class _NewMainState extends State<NewMain> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    String address = Provider.of<MyProvider>(context).addressip;
     var imag = Provider.of<MyProvider>(context).image;
     String role = Provider.of<MyProvider>(context).role;
     return Scaffold(
@@ -187,7 +189,9 @@ class _NewMainState extends State<NewMain> with TickerProviderStateMixin {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(RouteManager.loginPage);
+                    },
                     icon: const FaIcon(
                       FontAwesomeIcons.rightFromBracket,
                       size: 22,

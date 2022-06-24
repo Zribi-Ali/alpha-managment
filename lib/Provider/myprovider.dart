@@ -15,6 +15,7 @@ class MyProvider with ChangeNotifier {
   String _image = "";
   String _niveau_scolaire = "";
   late int _nombreclass = 0;
+  String _addressip = "http://192.168.93.26:8888/";
   /*  late ScrollController _controller;
 
   ScrollController get cotroller => _controller;
@@ -22,6 +23,7 @@ class MyProvider with ChangeNotifier {
     _controller = cotroller;
     notifyListeners();
   } */
+  String get addressip => _addressip;
   String get image => _image;
   String get id => _id;
   String get nom => _nom;
@@ -33,6 +35,11 @@ class MyProvider with ChangeNotifier {
 
   set nombreclass(int nombreclass) {
     _nombreclass = nombreclass;
+    notifyListeners();
+  }
+
+  set addressip(String addressip) {
+    _addressip = addressip;
     notifyListeners();
   }
 

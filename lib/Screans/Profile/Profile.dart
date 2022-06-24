@@ -20,6 +20,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     _fullname =
         "${Provider.of<MyProvider>(context).nom} ${Provider.of<MyProvider>(context).prenom}";
+
     image = Provider.of<MyProvider>(context).image;
 
     return Scaffold(
